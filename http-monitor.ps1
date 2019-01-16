@@ -6,9 +6,9 @@
 
 Function PlaySound 
 {
-	$mediaPlayer = New-Object system.windows.media.mediaplayer
-	$mediaPlayer.open('C:\github\powershell_new\ALARM9.WAV')
-	$mediaPlayer.Play()
+	$Path = "C:\alipay2\ALARM9.WAV"
+	$soundplayer = New-Object Media.SoundPlayer $Path
+	$soundplayer.PlaySync()
 }
 
  
@@ -22,14 +22,15 @@ Foreach($Uri in $URLList) {
   $time = try{ 
   $request = $null 
    ## Request the URI, and measure how long the response took. 
+  write-host $Uri
   $result1 = Measure-Command { $request = Invoke-WebRequest -Uri $uri } 
   $result1.TotalMilliseconds 
   }  
   catch 
   { 
    $request = $_.Exception.Response 
+   PlaySound
    $time = -1 
-   PlaySound;
   }   
   $result += [PSCustomObject] @{ 
   Time = Get-Date; 
