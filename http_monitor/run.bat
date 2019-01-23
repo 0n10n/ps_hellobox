@@ -1,1 +1,1 @@
- Powershell -file ".\http-monitor.ps1"
+C:\windows\system32\WindowsPowerShell\v1.0\powershell -NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -File  "C:\monitor\http-monitor.ps1"

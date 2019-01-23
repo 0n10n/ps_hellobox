@@ -6,14 +6,14 @@
 
 Function PlaySound 
 {
-	$Path = "C:\alipay2\ALARM9.WAV"
+	$Path = "C:\monitor\ALARM9.WAV"
 	$soundplayer = New-Object Media.SoundPlayer $Path
 	$soundplayer.PlaySync()
 }
 
  
 ## The URI list to test 
-$URLListFile = ".\URLList.txt"  
+$URLListFile = "C:\monitor\URLList.txt"  
 $URLList = Get-Content $URLListFile -ErrorAction SilentlyContinue 
 $Result = @() 
    
